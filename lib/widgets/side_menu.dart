@@ -104,41 +104,8 @@ class KheasydevSideMenu extends StatelessWidget {
                       }
                     }),
               ],
-              items: sidebarItems != null
-                  ? sidebarItemsToList(sidebarItemsToList(sidebarItems!))
-                  : [],
-              // items: [
-              //   SidebarXItem(
-              //     icon: Icons.newspaper,
-              //     label: 'סיכום חדשות',
-              //     onTap: () {
-              //        NavigatePage().pushAndRemoveUntil(context, const AllNews());
-              //      },
-              //   ),
-              //   SidebarXItem(
-              //     icon: Icons.source,
-              //     label: 'חדשות לפי מקור',
-              //      onTap: () {
-              //        NavigatePage()
-              //            .pushAndRemoveUntil(context, const NewsBySource());
-              //      },
-              //   ),
-              //    SidebarXItem(
-              //        icon: Icons.rocket,
-              //        label: 'התראות פיקוד העורף',
-              //        onTap: () {
-              //          NavigatePage().pushAndRemoveUntil(
-              //              context, const HomeFrontCommand());
-              //        }),
-              //   SidebarXItem(
-              //     icon: Icons.phone,
-              //     label: 'חייג לטלפון חירום',
-              //      onTap: () {
-              //        NavigatePage().pushAndRemoveUntil(
-              //            context, const SosPhoneNumbersCategories());
-              //      },
-              //   ),
-              // ],
+              items:
+                  sidebarItems != null ? sidebarItemsToList(sidebarItems!) : [],
             );
           }
         });
@@ -161,14 +128,15 @@ class KheasydevSideMenu extends StatelessWidget {
     return version;
   }
 
-  sidebarItemsToList(List<SideBarModel> sidebarItems) {
-    List<SidebarXItem> newList = [];
+  List<SidebarXItem> sidebarItemsToList(List<SideBarModel> sidebarItems) {
+    List<SidebarXItem> items = [];
     for (var element in sidebarItems) {
-      newList.add(SidebarXItem(
+      items.add(SidebarXItem(
         icon: element.icon,
         label: element.label,
         onTap: () => element.onTap,
       ));
     }
+    return items;
   }
 }
