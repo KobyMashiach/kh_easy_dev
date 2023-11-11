@@ -26,3 +26,4 @@ part 'widgets/divider.dart';
 
 // models
 part 'models/contactus_model.dart';
+part 'models/sidebar_model.dart';

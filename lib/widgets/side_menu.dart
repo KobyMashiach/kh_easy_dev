@@ -5,13 +5,21 @@ final InAppReview inAppReview = InAppReview.instance;
 class KheasydevSideMenu extends StatelessWidget {
   const KheasydevSideMenu(
       {super.key,
+      required this.appName,
       required this.selectedIndex,
       required this.shadowColor,
-      required this.disableColor});
+      required this.disableColor,
+      this.playStore,
+      this.appStore,
+      this.sidebarItems});
 
+  final String appName;
   final int selectedIndex;
   final Color shadowColor;
   final Color disableColor;
+  final String? playStore;
+  final String? appStore;
+  final List<SideBarModel>? sidebarItems;
 
   @override
   Widget build(BuildContext context) {
@@ -49,10 +57,7 @@ class KheasydevSideMenu extends StatelessWidget {
                     child: Column(
                       children: [
                         Image.asset('assets/logo.png', width: 100),
-                        const Text(
-                          "Easy News",
-                          textAlign: TextAlign.center,
-                        ),
+                        Text(appName, textAlign: TextAlign.center),
                         Padding(
                           padding: const EdgeInsets.only(top: 2),
                           child: Text(
@@ -69,7 +74,7 @@ class KheasydevSideMenu extends StatelessWidget {
               headerDivider: kheasydevDivider(),
               footerItems: [
                 // SidebarXItem(icon: Icons.group, label: 'המוצרים שלנו', onTap: () {}),
-                SidebarXItem(
+                const SidebarXItem(
                   icon: Icons.contact_page,
                   label: 'יצירת קשר',
                   // onTap: () {
@@ -82,7 +87,8 @@ class KheasydevSideMenu extends StatelessWidget {
                     label: 'שיתוף האפליקציה',
                     onTap: () {
                       if (!kIsWeb) {
-                        Share.share(getByPlatform());
+                        Share.share(getByPlatform(
+                            appStore: appStore, playStore: playStore));
                       } else {
                         //TODO: web open site
                         kheasydevAppToast('שיתוף לאתר בקרוב');
@@ -98,48 +104,51 @@ class KheasydevSideMenu extends StatelessWidget {
                       }
                     }),
               ],
-              items: [
-                SidebarXItem(
-                  icon: Icons.newspaper,
-                  label: 'סיכום חדשות',
-                  // onTap: () {
-                  //   NavigatePage().pushAndRemoveUntil(context, const AllNews());
-                  // },
-                ),
-                SidebarXItem(
-                  icon: Icons.source,
-                  label: 'חדשות לפי מקור',
-                  // onTap: () {
-                  //   NavigatePage()
-                  //       .pushAndRemoveUntil(context, const NewsBySource());
-                  // },
-                ),
-                // SidebarXItem(
-                //     icon: Icons.rocket,
-                //     label: 'התראות פיקוד העורף',
-                //     onTap: () {
-                //       NavigatePage().pushAndRemoveUntil(
-                //           context, const HomeFrontCommand());
-                //     }),
-                SidebarXItem(
-                  icon: Icons.phone,
-                  label: 'חייג לטלפון חירום',
-                  // onTap: () {
-                  //   NavigatePage().pushAndRemoveUntil(
-                  //       context, const SosPhoneNumbersCategories());
-                  // },
-                ),
-              ],
+              items: sidebarItems != null
+                  ? sidebarItemsToList(sidebarItemsToList(sidebarItems!))
+                  : [],
+              // items: [
+              //   SidebarXItem(
+              //     icon: Icons.newspaper,
+              //     label: 'סיכום חדשות',
+              //     onTap: () {
+              //        NavigatePage().pushAndRemoveUntil(context, const AllNews());
+              //      },
+              //   ),
+              //   SidebarXItem(
+              //     icon: Icons.source,
+              //     label: 'חדשות לפי מקור',
+              //      onTap: () {
+              //        NavigatePage()
+              //            .pushAndRemoveUntil(context, const NewsBySource());
+              //      },
+              //   ),
+              //    SidebarXItem(
+              //        icon: Icons.rocket,
+              //        label: 'התראות פיקוד העורף',
+              //        onTap: () {
+              //          NavigatePage().pushAndRemoveUntil(
+              //              context, const HomeFrontCommand());
+              //        }),
+              //   SidebarXItem(
+              //     icon: Icons.phone,
+              //     label: 'חייג לטלפון חירום',
+              //      onTap: () {
+              //        NavigatePage().pushAndRemoveUntil(
+              //            context, const SosPhoneNumbersCategories());
+              //      },
+              //   ),
+              // ],
             );
           }
         });
   }
 
-  String getByPlatform() {
+  String getByPlatform({String? playStore, String? appStore}) {
     if (Platform.isAndroid) {
-      return 'https://play.google.com/store/apps/details?id=com.KHEasyDev.easy_news&pcampaignid=web_share';
+      return playStore ?? 'android';
     } else if (Platform.isIOS) {
-      return 'ios';
+      return appStore ?? 'ios';
     } else if (Platform.isMacOS) {
       return 'macOs';
     }
@@ -150,5 +159,16 @@ class KheasydevSideMenu extends StatelessWidget {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
     String version = packageInfo.version;
     return version;
+  }
+
+  sidebarItemsToList(List<SideBarModel> sidebarItems) {
+    List<SidebarXItem> newList = [];
+    for (var element in sidebarItems) {
+      newList.add(SidebarXItem(
+        icon: element.icon,
+        label: element.label,
+        onTap: () => element.onTap,
+      ));
+    }
   }
 }

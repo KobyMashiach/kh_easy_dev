@@ -1,13 +1,12 @@
 part of kh_easy_dev;
 
 AppBar kheasydevAppBar({
-  String? title,
-  bool? homePage,
-  List<Widget>? action,
+  required String title,
+  List<Widget>? actions,
   required String logoPath,
   required Color primaryColor,
   required Color shadowColor,
-  required Widget page,
+  Widget? developerPage,
 }) {
   return AppBar(
     backgroundColor: primaryColor,
@@ -32,19 +31,12 @@ AppBar kheasydevAppBar({
         ],
       ),
     ),
-    actions: homePage != null
+    actions: developerPage != null
         ? [
-            GestureDetector(
-              onLongPress: () =>
-                  KheasydevNavigatePage().pushWithoutContext(page),
-              child: const Icon(
-                Icons.add,
-                color: Colors.transparent,
-                size: 50,
-              ),
-            ),
+            ...actions ?? [],
+            GoToDeveloperPage(developerPage),
           ]
-        : action,
+        : actions ?? [],
     centerTitle: true,
     toolbarHeight: 70,
     elevation: 20,
@@ -56,6 +48,17 @@ AppBar kheasydevAppBar({
       ),
     ),
     iconTheme: const IconThemeData(color: Colors.white),
+  );
+}
+
+GestureDetector GoToDeveloperPage(Widget page) {
+  return GestureDetector(
+    onLongPress: () => KheasydevNavigatePage().pushWithoutContext(page),
+    child: const Icon(
+      Icons.add,
+      color: Colors.transparent,
+      size: 50,
+    ),
   );
 }
 
