@@ -11,7 +11,9 @@ class KheasydevSideMenu extends StatelessWidget {
       required this.disableColor,
       this.playStore,
       this.appStore,
-      this.sidebarItems});
+      this.sidebarItems,
+      required this.buttomBackground,
+      required this.appBar});
 
   final String appName;
   final int selectedIndex;
@@ -20,6 +22,8 @@ class KheasydevSideMenu extends StatelessWidget {
   final String? playStore;
   final String? appStore;
   final List<SideBarModel>? sidebarItems;
+  final PreferredSizeWidget appBar;
+  final Color buttomBackground;
 
   @override
   Widget build(BuildContext context) {
@@ -81,13 +85,18 @@ class KheasydevSideMenu extends StatelessWidget {
               headerDivider: kheasydevDivider(),
               footerItems: [
                 // SidebarXItem(icon: Icons.group, label: 'המוצרים שלנו', onTap: () {}),
-                const SidebarXItem(
+                SidebarXItem(
                   icon: Icons.contact_page,
                   label: 'יצירת קשר',
-                  // onTap: () {
-                  //   NavigatePage()
-                  //       .pushAndRemoveUntil(context, const ContactUsScreen());
-                  // },
+                  onTap: () {
+                    KheasydevNavigatePage().pushAndRemoveUntil(
+                        context,
+                        ContactUsScreen(
+                          appBar: appBar,
+                          buttomBackground: buttomBackground,
+                          key: key,
+                        ));
+                  },
                 ),
                 SidebarXItem(
                     icon: Icons.share,
