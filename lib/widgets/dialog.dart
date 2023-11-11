@@ -13,8 +13,8 @@ class KheasydevDialog extends StatefulWidget {
   final String? description;
   final List<String>? descriptions;
   final bool? shouldDisplayX;
-  final Color? primaryColor;
-  final Color? buttomBackground;
+  final Color primaryColor;
+  final Color buttomBackground;
 
   const KheasydevDialog({
     super.key,
@@ -30,8 +30,8 @@ class KheasydevDialog extends StatefulWidget {
     this.duration,
     this.description,
     this.descriptions,
-    this.primaryColor,
-    this.buttomBackground,
+    required this.primaryColor,
+    required this.buttomBackground,
   });
 
   @override
