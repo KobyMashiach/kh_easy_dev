@@ -22,7 +22,7 @@ part 'widgets/side_menu.dart';
 part 'widgets/divider.dart';
 
 // screens
-// part 'screens/contactus.dart';
+part 'screens/contactus.dart';
 
 // models
 part 'models/contactus_model.dart';

@@ -3,13 +3,13 @@ part of kh_easy_dev;
 AppBar kheasydevAppBar({
   required String title,
   List<Widget>? actions,
-  required String logoPath,
-  required Color primaryColor,
-  required Color shadowColor,
+  String? logoPath,
+  Color? primaryColor,
+  Color? shadowColor,
   Widget? developerPage,
 }) {
   return AppBar(
-    backgroundColor: primaryColor,
+    backgroundColor: primaryColor ?? Colors.black,
     title: IntrinsicHeight(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -24,7 +24,7 @@ AppBar kheasydevAppBar({
           ),
           verticalDivider(),
           Image.asset(
-            logoPath,
+            logoPath ?? '',
             width: 60,
             height: 60,
           ),
@@ -40,7 +40,7 @@ AppBar kheasydevAppBar({
     centerTitle: true,
     toolbarHeight: 70,
     elevation: 20,
-    shadowColor: shadowColor,
+    shadowColor: shadowColor ?? Colors.white,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
         bottomLeft: Radius.circular(20),
