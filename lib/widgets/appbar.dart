@@ -4,6 +4,7 @@ AppBar kheasydevAppBar({
   String? title,
   bool? homePage,
   List<Widget>? action,
+  required String logoPath,
   required Color primaryColor,
   required Color shadowColor,
   required Widget page,
@@ -16,7 +17,7 @@ AppBar kheasydevAppBar({
         children: [
           Expanded(
             child: Text(
-              title ?? "Easy News",
+              title ?? "K&H Easy Dev",
               overflow: TextOverflow.clip,
               style: const TextStyle(
                   color: Colors.white, fontWeight: FontWeight.bold),
@@ -24,7 +25,7 @@ AppBar kheasydevAppBar({
           ),
           verticalDivider(),
           Image.asset(
-            'assets/logo.png',
+            logoPath,
             width: 60,
             height: 60,
           ),
