@@ -57,7 +57,11 @@ class KheasydevSideMenu extends StatelessWidget {
                     child: Column(
                       children: [
                         Image.asset('assets/logo.png', width: 100),
-                        Text(appName, textAlign: TextAlign.center),
+                        Text(
+                          appName,
+                          textAlign: TextAlign.center,
+                          maxLines: 1,
+                        ),
                         Padding(
                           padding: const EdgeInsets.only(top: 2),
                           child: Text(
