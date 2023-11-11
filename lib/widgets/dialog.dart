@@ -1,6 +1,6 @@
 part of kh_easy_dev;
 
-class EasyNewsDialog extends StatefulWidget {
+class KheasydevDialog extends StatefulWidget {
   final double? height;
   final double? width;
   final String? title;
@@ -16,7 +16,7 @@ class EasyNewsDialog extends StatefulWidget {
   final Color? primaryColor;
   final Color? buttomBackground;
 
-  const EasyNewsDialog({
+  const KheasydevDialog({
     super.key,
     this.height,
     this.width,
@@ -35,10 +35,10 @@ class EasyNewsDialog extends StatefulWidget {
   });
 
   @override
-  State<EasyNewsDialog> createState() => _EasyNewsDialogState();
+  State<KheasydevDialog> createState() => _KheasydevDialogState();
 }
 
-class _EasyNewsDialogState extends State<EasyNewsDialog> {
+class _KheasydevDialogState extends State<KheasydevDialog> {
   Timer? _timer;
   late bool shouldDisplayX;
 

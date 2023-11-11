@@ -15,14 +15,14 @@ import 'package:url_launcher/url_launcher.dart';
 
 // widgets
 part 'widgets/app_toast.dart';
-part 'widgets/easy_news_dialog.dart';
-part 'widgets/easynews_appbar.dart';
+part 'widgets/dialog.dart';
+part 'widgets/appbar.dart';
 part 'widgets/onwillpop.dart';
 part 'widgets/side_menu.dart';
 part 'widgets/divider.dart';
 
 // screens
-part 'screens/contactus.dart';
+// part 'screens/contactus.dart';
 
 // models
 part 'models/contactus_model.dart';

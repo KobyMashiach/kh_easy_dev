@@ -1,6 +1,6 @@
 part of kh_easy_dev;
 
-AppBar easyNewsAppBar({
+AppBar kheasydevAppBar({
   String? title,
   bool? homePage,
   List<Widget>? action,
@@ -34,7 +34,8 @@ AppBar easyNewsAppBar({
     actions: homePage != null
         ? [
             GestureDetector(
-              onLongPress: () => NavigatePage().pushWithoutContext(page),
+              onLongPress: () =>
+                  KheasydevNavigatePage().pushWithoutContext(page),
               child: const Icon(
                 Icons.add,
                 color: Colors.transparent,

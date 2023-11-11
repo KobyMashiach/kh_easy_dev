@@ -1,13 +1,13 @@
-part of kh_easy_dev;
+// part of kh_easy_dev;
 
-class ContactUsScreen extends StatelessWidget {
-  const ContactUsScreen({super.key});
+// class ContactUsScreen extends StatelessWidget {
+//   const ContactUsScreen({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () => onWillPop(context),
-      child: Scaffold(
+//   @override
+//   Widget build(BuildContext context) {
+//     return WillPopScope(
+//       onWillPop: () => onWillPop(context),
+//       child: Scaffold(
           // appBar: easyNewsAppBar(title: "יצירת קשר"),
           // drawer: const SideMenu(selectedIndex: 3),
           // body: const ContactUs(
@@ -21,7 +21,7 @@ class ContactUsScreen extends StatelessWidget {
           //   facebookHandle: 'GIFTUREIL',
           //   tiktokUrl: "gifture_il",
           // ),
-          ),
-    );
-  }
-}
+//           ),
+//     );
+//   }
+// }

@@ -124,7 +124,7 @@ class ContactUs extends StatelessWidget {
             const SizedBox(
               height: 10.0,
             ),
-            divider(
+            kheasydevDivider(
               height: 2,
             ),
             const SizedBox(
@@ -168,7 +168,7 @@ class ContactUs extends StatelessWidget {
                   ),
                   onTap: () => showDialog(
                     context: context,
-                    builder: (context) => EasyNewsDialog(
+                    builder: (context) => KheasydevDialog(
                       title: 'בחר דרך יצירת קשר',
                       description: phoneNumber,
                       isDismissable: true,
@@ -178,7 +178,7 @@ class ContactUs extends StatelessWidget {
                           type: GenericButtonType.elevated,
                           onPressed: () {
                             launchUrl(Uri.parse('tel:${phoneNumber!}'));
-                            NavigatePage().pop(context);
+                            KheasydevNavigatePage().pop(context);
                           },
                         ),
                         GenericButtonModel(
@@ -186,7 +186,7 @@ class ContactUs extends StatelessWidget {
                           type: GenericButtonType.elevated,
                           onPressed: () {
                             launchUrl(Uri.parse('sms:${phoneNumber!}'));
-                            NavigatePage().pop(context);
+                            KheasydevNavigatePage().pop(context);
                           },
                         ),
                         GenericButtonModel(
@@ -195,7 +195,7 @@ class ContactUs extends StatelessWidget {
                           onPressed: () {
                             launchUrl(Uri.parse(
                                 'https://api.whatsapp.com/send?phone=+972$phoneNumber&text=היי אשמח לעזרה'));
-                            NavigatePage().pop(context);
+                            KheasydevNavigatePage().pop(context);
                           },
                         ),
                       ],

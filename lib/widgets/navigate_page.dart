@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class NavigatePage {
+class KheasydevNavigatePage {
   push(BuildContext context, Widget page) {
     try {
       Navigator.of(context).push(

@@ -1,9 +1,9 @@
 part of kh_easy_dev;
 
-Future<bool> onWillPop(BuildContext context) async {
+Future<bool> kheasydevOnWillPop(BuildContext context) async {
   return (await showDialog(
         context: context,
-        builder: (context) => EasyNewsDialog(
+        builder: (context) => KheasydevDialog(
           title: 'לצאת מהאפליקציה?',
           description: 'האם את/ה בטוח/ה רוצה לצאת מהאפליקציה?',
           isDismissable: false,

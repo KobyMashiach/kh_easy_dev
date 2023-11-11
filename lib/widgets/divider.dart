@@ -1,6 +1,6 @@
 part of kh_easy_dev;
 
-Widget divider({double? height, EdgeInsets? padding}) {
+Widget kheasydevDivider({double? height, EdgeInsets? padding}) {
   return Padding(
     padding: padding ?? const EdgeInsets.only(top: 8),
     child: SizedBox(

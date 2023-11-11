@@ -2,8 +2,8 @@ part of kh_easy_dev;
 
 final InAppReview inAppReview = InAppReview.instance;
 
-class SideMenu extends StatelessWidget {
-  const SideMenu(
+class KheasydevSideMenu extends StatelessWidget {
+  const KheasydevSideMenu(
       {super.key,
       required this.selectedIndex,
       required this.shadowColor,
@@ -66,16 +66,17 @@ class SideMenu extends StatelessWidget {
                 );
               },
               // headerDivider: const Divider(color: Colors.white),
-              headerDivider: divider(),
+              headerDivider: kheasydevDivider(),
               footerItems: [
                 // SidebarXItem(icon: Icons.group, label: 'המוצרים שלנו', onTap: () {}),
                 SidebarXItem(
-                    icon: Icons.contact_page,
-                    label: 'יצירת קשר',
-                    onTap: () {
-                      NavigatePage()
-                          .pushAndRemoveUntil(context, const ContactUsScreen());
-                    }),
+                  icon: Icons.contact_page,
+                  label: 'יצירת קשר',
+                  // onTap: () {
+                  //   NavigatePage()
+                  //       .pushAndRemoveUntil(context, const ContactUsScreen());
+                  // },
+                ),
                 SidebarXItem(
                     icon: Icons.share,
                     label: 'שיתוף האפליקציה',
@@ -84,7 +85,7 @@ class SideMenu extends StatelessWidget {
                         Share.share(getByPlatform());
                       } else {
                         //TODO: web open site
-                        appToast('שיתוף לאתר בקרוב');
+                        kheasydevAppToast('שיתוף לאתר בקרוב');
                       }
                     }),
                 SidebarXItem(
