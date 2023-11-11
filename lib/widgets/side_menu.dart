@@ -134,7 +134,7 @@ class KheasydevSideMenu extends StatelessWidget {
       items.add(SidebarXItem(
         icon: element.icon,
         label: element.label,
-        onTap: () => element.onTap,
+        onTap: element.onTap,
       ));
     }
     return items;
