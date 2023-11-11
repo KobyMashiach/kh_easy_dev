@@ -89,7 +89,7 @@ class KheasydevSideMenu extends StatelessWidget {
                   icon: Icons.contact_page,
                   label: 'יצירת קשר',
                   onTap: () {
-                    KheasydevNavigatePage().pushAndRemoveUntil(
+                    KheasydevNavigatePage().push(
                         context,
                         ContactUsScreen(
                           appBar: appBar,
