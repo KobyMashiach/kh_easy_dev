@@ -1,6 +1,6 @@
 name: kh_easy_dev
 description: A new Flutter package project.
-version: 0.0.1
+version: 0.0.2
 homepage: kh_easy_dev
 
 environment:
@@ -15,6 +15,7 @@ dependencies:
   sidebarx: ^0.16.2
   flutter_localizations:
     sdk: flutter
+  typicons_flutter: ^0.5.0
 
   # notification & share
   fluttertoast: ^8.2.2

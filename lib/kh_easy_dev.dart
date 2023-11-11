@@ -10,6 +10,8 @@ import 'package:package_info_plus/package_info_plus.dart';
 import 'package:share_plus/share_plus.dart';
 import 'package:sidebarx/sidebarx.dart';
 import 'package:in_app_review/in_app_review.dart';
+import 'package:typicons_flutter/typicons_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 // widgets
 part 'widgets/app_toast.dart';
@@ -22,8 +24,5 @@ part 'widgets/divider.dart';
 // screens
 part 'screens/contactus.dart';
 
-/// A Calculator.
-class Calculator {
-  /// Returns [value] plus 1.
-  int addOne(int value) => value + 1;
-}
+// models
+part 'models/contactus_model.dart';
