@@ -195,7 +195,7 @@ class _KheasydevDialogState extends State<KheasydevDialog> {
                           iconSize: 28,
                           icon: const Icon(
                             Icons.close,
-                            color: Colors.white,
+                            color: Colors.black,
                           ),
                         ),
                       ),
