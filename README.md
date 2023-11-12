@@ -19,7 +19,7 @@ a lot of widgets to kheasydev applications
 
 ## Getting started
 
-no need providers
+import 'package:kh_easy_dev/kh_easy_dev.dart';
 
 ## Usage
 
@@ -27,9 +27,33 @@ no need providers
 `/models`
 `/widgets`
 
-
+## Side Menu Example
 ```dart
-const like = 'sample';
+appSideMenu(BuildContext context, {required int index}) {
+  return KheasydevSideMenu(
+    selectedIndex: index,
+    shadowColor: AppColor.primaryColor,
+    disableColor: AppColor.disableColor,
+    appName: 'App Name',
+    sidebarItems: [
+      SideBarModel(
+          icon: Icons.home,
+          label: "page name 1",
+          onTap: () {
+            KheasydevNavigatePage().push(context, HomePage());
+          }),
+      SideBarModel(
+          icon: Icons.check_box,
+          label: "Page Name 2",
+          onTap: () {
+            KheasydevNavigatePage().push(context, TestPage());
+          }),
+      // SideBarModel(icon: Icons.abc, label: "label", onTap: () {})
+    ],
+    buttomBackground: AppColor.buttomBackground,
+    appBar: appAppBar(title: 'יצירת קשר'),
+  );
+}
 ```
 
 ## Additional information
