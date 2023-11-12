@@ -16,7 +16,7 @@ AppBar kheasydevAppBar({
         children: [
           Expanded(
             child: Text(
-              title ?? "K&H Easy Dev",
+              title,
               overflow: TextOverflow.clip,
               style: const TextStyle(
                   color: Colors.white, fontWeight: FontWeight.bold),
