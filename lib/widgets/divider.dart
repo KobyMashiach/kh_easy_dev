@@ -22,3 +22,27 @@ Widget kheasydevDivider({double? height, EdgeInsets? padding}) {
     ),
   );
 }
+
+Widget kheasydevVerticalDivider({double? height, EdgeInsets? padding}) {
+  return Padding(
+    padding: const EdgeInsets.symmetric(horizontal: 16),
+    child: SizedBox(
+      width: 1,
+      height: 60,
+      child: Container(
+        decoration: const BoxDecoration(
+          gradient: LinearGradient(
+            colors: [
+              Colors.white10,
+              Colors.white,
+              Colors.white10,
+            ],
+            stops: [0.0, 0.5, 1.0],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+          ),
+        ),
+      ),
+    ),
+  );
+}

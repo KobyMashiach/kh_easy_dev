@@ -1,3 +1,6 @@
+## 0.0.7
+add vertical divider
+
 ## 0.0.6
 add examples
 
