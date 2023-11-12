@@ -1,6 +1,6 @@
 name: kh_easy_dev
-description: A new Flutter package project.
-version: 0.0.3
+description: package to all kh easy dev application.
+version: 0.0.5
 homepage: kh_easy_dev
 
 environment:
