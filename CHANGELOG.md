@@ -1,3 +1,6 @@
+## 0.0.8
+fix divider
+
 ## 0.0.7
 add vertical divider
 

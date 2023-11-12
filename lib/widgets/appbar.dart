@@ -23,20 +23,19 @@ AppBar kheasydevAppBar({
             ),
           ),
           kheasydevVerticalDivider(),
-          Image.asset(
-            logoPath ?? '',
-            width: 60,
-            height: 60,
+          GestureDetector(
+            onTap: () =>
+                developerPage != null ? GoToDeveloperPage(developerPage) : null,
+            child: Image.asset(
+              logoPath ?? '',
+              width: 60,
+              height: 60,
+            ),
           ),
         ],
       ),
     ),
-    actions: developerPage != null
-        ? [
-            ...actions ?? [],
-            GoToDeveloperPage(developerPage),
-          ]
-        : actions ?? [],
+    actions: actions ?? [],
     centerTitle: true,
     toolbarHeight: 70,
     elevation: 20,
