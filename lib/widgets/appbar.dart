@@ -24,8 +24,9 @@ AppBar kheasydevAppBar({
           ),
           kheasydevVerticalDivider(),
           GestureDetector(
-            onTap: () =>
-                developerPage != null ? GoToDeveloperPage(developerPage) : null,
+            onTap: () => developerPage != null
+                ? KheasydevNavigatePage().pushWithoutContext(developerPage)
+                : null,
             child: Image.asset(
               logoPath ?? '',
               width: 60,
@@ -47,16 +48,5 @@ AppBar kheasydevAppBar({
       ),
     ),
     iconTheme: const IconThemeData(color: Colors.white),
-  );
-}
-
-GestureDetector GoToDeveloperPage(Widget page) {
-  return GestureDetector(
-    onLongPress: () => KheasydevNavigatePage().pushWithoutContext(page),
-    child: const Icon(
-      Icons.add,
-      color: Colors.transparent,
-      size: 50,
-    ),
   );
 }
