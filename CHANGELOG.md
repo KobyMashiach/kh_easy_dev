@@ -1,3 +1,2 @@
 ## 0.0.5
-
-* TODO: Describe initial release.
+Widgets to design all easy apps
