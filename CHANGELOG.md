@@ -1,3 +1,6 @@
+## 0.0.9
+fix developer page navigate
+
 ## 0.0.8
 fix divider
 
