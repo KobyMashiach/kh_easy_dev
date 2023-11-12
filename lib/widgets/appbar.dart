@@ -24,7 +24,7 @@ AppBar kheasydevAppBar({
           ),
           kheasydevVerticalDivider(),
           GestureDetector(
-            onTap: () => developerPage != null
+            onLongPress: () => developerPage != null
                 ? KheasydevNavigatePage().pushWithoutContext(developerPage)
                 : null,
             child: Image.asset(
