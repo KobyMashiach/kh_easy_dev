@@ -7,6 +7,7 @@ AppBar kheasydevAppBar({
   Color? primaryColor,
   Color? shadowColor,
   Widget? developerPage,
+  Color? titleColor,
 }) {
   return AppBar(
     backgroundColor: primaryColor ?? Colors.black,
@@ -18,8 +19,9 @@ AppBar kheasydevAppBar({
             child: Text(
               title,
               overflow: TextOverflow.clip,
-              style: const TextStyle(
-                  color: Colors.white, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                  color: titleColor ?? Colors.white,
+                  fontWeight: FontWeight.bold),
             ),
           ),
           kheasydevVerticalDivider(),
