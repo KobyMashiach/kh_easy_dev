@@ -1,3 +1,6 @@
+## 0.1.0
+add select text color in app bar
+
 ## 0.0.9
 fix developer page navigate
 
