@@ -1,3 +1,12 @@
+## 0.1.3
+fix developer page
+
+## 0.1.2
+add developer page
+
+## 0.1.1
+fix colors
+
 ## 0.1.0
 add select text color in app bar
 

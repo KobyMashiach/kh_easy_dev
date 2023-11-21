@@ -7,6 +7,7 @@ AppBar kheasydevAppBar({
   Color? primaryColor,
   Color? shadowColor,
   Widget? developerPage,
+  BuildContext? context,
   Color? titleColor,
 }) {
   return AppBar(
@@ -27,7 +28,7 @@ AppBar kheasydevAppBar({
           kheasydevVerticalDivider(),
           GestureDetector(
             onLongPress: () => developerPage != null
-                ? KheasydevNavigatePage().pushWithoutContext(developerPage)
+                ? KheasydevNavigatePage().push(context!, developerPage)
                 : null,
             child: Image.asset(
               logoPath ?? '',
