@@ -12,6 +12,7 @@ class KheasydevSideMenu extends StatelessWidget {
       this.playStore,
       this.appStore,
       this.sidebarItems,
+      this.contactUsScreen,
       required this.buttomBackground,
       required this.appBar});
 
@@ -24,6 +25,7 @@ class KheasydevSideMenu extends StatelessWidget {
   final List<SideBarModel>? sidebarItems;
   final PreferredSizeWidget appBar;
   final Color buttomBackground;
+  final Widget? contactUsScreen;
 
   @override
   Widget build(BuildContext context) {
@@ -91,11 +93,12 @@ class KheasydevSideMenu extends StatelessWidget {
                   onTap: () {
                     KheasydevNavigatePage().push(
                         context,
-                        ContactUsScreen(
-                          appBar: appBar,
-                          buttomBackground: buttomBackground,
-                          key: key,
-                        ));
+                        contactUsScreen ??
+                            ContactUsScreen(
+                              appBar: appBar,
+                              buttomBackground: buttomBackground,
+                              key: key,
+                            ));
                   },
                 ),
                 SidebarXItem(

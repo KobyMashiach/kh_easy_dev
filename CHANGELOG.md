@@ -1,3 +1,6 @@
+## 0.1.4
+delete developer page
+
 ## 0.1.3
 fix developer page
 

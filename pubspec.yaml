@@ -1,6 +1,6 @@
 name: kh_easy_dev
 description: package to all kh easy dev application.
-version: 0.1.3
+version: 0.1.4
 homepage: https://github.com/KobyMashiach/kh_easy_dev
 
 environment:
