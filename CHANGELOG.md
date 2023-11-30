@@ -1,3 +1,9 @@
+## 0.1.6
+add option to black divider and vertical divider
+
+## 0.1.5
+anable edit contact us page
+
 ## 0.1.4
 delete developer page
 

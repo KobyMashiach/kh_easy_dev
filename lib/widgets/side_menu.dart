@@ -2,6 +2,8 @@ part of kh_easy_dev;
 
 final InAppReview inAppReview = InAppReview.instance;
 
+//todo: change share and review
+
 class KheasydevSideMenu extends StatelessWidget {
   const KheasydevSideMenu(
       {super.key,
@@ -12,6 +14,8 @@ class KheasydevSideMenu extends StatelessWidget {
       this.playStore,
       this.appStore,
       this.sidebarItems,
+      this.shareButton,
+      this.reviewButton,
       this.contactUsScreen,
       required this.buttomBackground,
       required this.appBar});
@@ -26,6 +30,8 @@ class KheasydevSideMenu extends StatelessWidget {
   final PreferredSizeWidget appBar;
   final Color buttomBackground;
   final Widget? contactUsScreen;
+  final bool? shareButton;
+  final bool? reviewButton;
 
   @override
   Widget build(BuildContext context) {
