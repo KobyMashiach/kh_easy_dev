@@ -2,6 +2,7 @@ part of kh_easy_dev;
 
 AppBar kheasydevAppBar({
   required String title,
+  Widget? widgetTitle,
   List<Widget>? actions,
   String? logoPath,
   Color? primaryColor,
@@ -17,13 +18,14 @@ AppBar kheasydevAppBar({
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(
-            child: Text(
-              title,
-              overflow: TextOverflow.clip,
-              style: TextStyle(
-                  color: titleColor ?? Colors.white,
-                  fontWeight: FontWeight.bold),
-            ),
+            child: widgetTitle ??
+                Text(
+                  title,
+                  overflow: TextOverflow.clip,
+                  style: TextStyle(
+                      color: titleColor ?? Colors.white,
+                      fontWeight: FontWeight.bold),
+                ),
           ),
           kheasydevVerticalDivider(),
           GestureDetector(
