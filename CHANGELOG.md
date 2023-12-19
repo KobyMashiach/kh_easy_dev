@@ -1,3 +1,6 @@
+## 0.1.7
+add widget title
+
 ## 0.1.6
 add option to black divider and vertical divider
 
