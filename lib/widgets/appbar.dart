@@ -3,6 +3,7 @@ part of kh_easy_dev;
 AppBar kheasydevAppBar({
   required String title,
   Widget? widgetTitle,
+  Widget? leading,
   List<Widget>? actions,
   String? logoPath,
   Color? primaryColor,
@@ -41,6 +42,7 @@ AppBar kheasydevAppBar({
         ],
       ),
     ),
+    leading: leading,
     actions: actions ?? [],
     centerTitle: true,
     toolbarHeight: 70,

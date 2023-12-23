@@ -1,5 +1,8 @@
+## 0.1.8
+add leading option in app bar
+
 ## 0.1.7
-add widget title
+add widget title in app bar
 
 ## 0.1.6
 add option to black divider and vertical divider
