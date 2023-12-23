@@ -7,7 +7,6 @@ final InAppReview inAppReview = InAppReview.instance;
 class KheasydevSideMenu extends StatelessWidget {
   const KheasydevSideMenu(
       {super.key,
-      required this.appName,
       required this.selectedIndex,
       required this.shadowColor,
       required this.disableColor,
@@ -20,7 +19,6 @@ class KheasydevSideMenu extends StatelessWidget {
       required this.buttomBackground,
       required this.appBar});
 
-  final String appName;
   final int selectedIndex;
   final Color shadowColor;
   final Color disableColor;
@@ -36,7 +34,7 @@ class KheasydevSideMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-        future: getAppVersion(),
+        future: getAppDetails(),
         builder: (context, snapshot) {
           if (snapshot.connectionState != ConnectionState.done) {
             return const CircularProgressIndicator();
@@ -72,7 +70,7 @@ class KheasydevSideMenu extends StatelessWidget {
                         FittedBox(
                           fit: BoxFit.fitWidth,
                           child: Text(
-                            appName,
+                            snapshot.data?.$1 ?? "",
                             textAlign: TextAlign.center,
                             maxLines: 1,
                           ),
@@ -80,7 +78,7 @@ class KheasydevSideMenu extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(top: 2),
                           child: Text(
-                            snapshot.data ?? "",
+                            snapshot.data?.$2 ?? "",
                             style: const TextStyle(fontSize: 8),
                           ),
                         )
@@ -147,10 +145,11 @@ class KheasydevSideMenu extends StatelessWidget {
     return 'null';
   }
 
-  Future<String> getAppVersion() async {
+  Future<(String, String)> getAppDetails() async {
     PackageInfo packageInfo = await PackageInfo.fromPlatform();
+    String name = packageInfo.appName;
     String version = packageInfo.version;
-    return version;
+    return (name, version);
   }
 
   List<SidebarXItem> sidebarItemsToList(List<SideBarModel> sidebarItems) {

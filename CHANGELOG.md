@@ -1,3 +1,6 @@
+## 0.1.9
+get automatic the appname
+
 ## 0.1.8
 add leading option in app bar
 
