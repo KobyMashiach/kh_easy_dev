@@ -73,13 +73,14 @@ class KheasydevSideMenu extends StatelessWidget {
                             snapshot.data?.$1 ?? "",
                             textAlign: TextAlign.center,
                             maxLines: 1,
+                            style: TextStyle(color: shadowColor),
                           ),
                         ),
                         Padding(
                           padding: const EdgeInsets.only(top: 2),
                           child: Text(
                             snapshot.data?.$2 ?? "",
-                            style: const TextStyle(fontSize: 8),
+                            style: TextStyle(fontSize: 8, color: shadowColor),
                           ),
                         )
                       ],
@@ -117,15 +118,16 @@ class KheasydevSideMenu extends StatelessWidget {
                         kheasydevAppToast('שיתוף לאתר בקרוב');
                       }
                     }),
-                SidebarXItem(
-                    icon: Icons.rate_review,
-                    label: 'דרג',
-                    onTap: () async {
-                      if (await inAppReview.isAvailable()) {
-                        // inAppReview.openStoreListing();
-                        inAppReview.requestReview();
-                      }
-                    }),
+                if (reviewButton != false)
+                  SidebarXItem(
+                      icon: Icons.rate_review,
+                      label: 'דרג',
+                      onTap: () async {
+                        if (await inAppReview.isAvailable()) {
+                          // inAppReview.openStoreListing();
+                          inAppReview.requestReview();
+                        }
+                      }),
               ],
               items:
                   sidebarItems != null ? sidebarItemsToList(sidebarItems!) : [],

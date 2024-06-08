@@ -7,7 +7,6 @@ appSideMenu(BuildContext context, {required int index, required Widget page}) {
     selectedIndex: index,
     shadowColor: Colors.green,
     disableColor: Colors.greenAccent,
-    appName: 'Gifture',
     sidebarItems: [
       SideBarModel(
           icon: Icons.home,

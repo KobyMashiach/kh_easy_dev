@@ -11,23 +11,34 @@ AppBar kheasydevAppBar({
   Widget? developerPage,
   BuildContext? context,
   Color? titleColor,
+  (String, Function(String))? searchAppBar,
 }) {
+  FocusNode? titleSearchFocus = FocusNode();
+  if (searchAppBar != null) titleSearchFocus.requestFocus();
   return AppBar(
     backgroundColor: primaryColor ?? Colors.black,
     title: IntrinsicHeight(
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Expanded(
-            child: widgetTitle ??
-                Text(
-                  title,
-                  overflow: TextOverflow.clip,
-                  style: TextStyle(
-                      color: titleColor ?? Colors.white,
-                      fontWeight: FontWeight.bold),
-                ),
-          ),
+          if (searchAppBar == null)
+            Expanded(
+              child: widgetTitle ??
+                  Text(
+                    title,
+                    overflow: TextOverflow.clip,
+                    style: TextStyle(
+                        color: titleColor ?? Colors.white,
+                        fontWeight: FontWeight.bold),
+                  ),
+            ),
+          if (searchAppBar != null)
+            Expanded(
+                child: TextField(
+              focusNode: titleSearchFocus,
+              decoration: InputDecoration.collapsed(hintText: searchAppBar.$1),
+              onChanged: searchAppBar.$2,
+            )),
           kheasydevVerticalDivider(),
           GestureDetector(
             onLongPress: () => developerPage != null

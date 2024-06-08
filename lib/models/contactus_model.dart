@@ -10,6 +10,7 @@ class ContactUs extends StatelessWidget {
   final String companyName;
   final String? instagram;
   final Color textColor;
+  final Color? dialogColor;
   final List<CustomSocialField>? customSocials;
 
   const ContactUs({
@@ -18,6 +19,7 @@ class ContactUs extends StatelessWidget {
     required this.textColor,
     required this.email,
     this.logo,
+    this.dialogColor,
     this.phoneNumber,
     this.website,
     this.facebookHandle,
@@ -170,6 +172,7 @@ class ContactUs extends StatelessWidget {
                     context: context,
                     builder: (context) => KheasydevDialog(
                       title: 'בחר דרך יצירת קשר',
+                      primaryColor: dialogColor,
                       description: phoneNumber,
                       isDismissable: true,
                       buttons: [

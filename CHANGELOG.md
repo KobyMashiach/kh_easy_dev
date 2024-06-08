@@ -1,3 +1,12 @@
+## 0.2.2
+option to disable review button
+
+## 0.2.1
+side menu change app details color to primary color
+
+## 0.2.0
+add option to search textfield inside appbar
+
 ## 0.1.9
 get automatic the appname
 
