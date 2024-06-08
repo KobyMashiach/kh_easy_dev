@@ -1,3 +1,6 @@
+## 0.2.3
+update dependencies and add dialog color in contact us phone dialog
+
 ## 0.2.2
 option to disable review button
 
