@@ -5,19 +5,20 @@ final InAppReview inAppReview = InAppReview.instance;
 //todo: change share and review
 
 class KheasydevSideMenu extends StatelessWidget {
-  const KheasydevSideMenu(
-      {super.key,
-      required this.selectedIndex,
-      required this.shadowColor,
-      required this.disableColor,
-      this.playStore,
-      this.appStore,
-      this.sidebarItems,
-      this.shareButton,
-      this.reviewButton,
-      this.contactUsScreen,
-      required this.buttomBackground,
-      required this.appBar});
+  const KheasydevSideMenu({
+    super.key,
+    required this.selectedIndex,
+    required this.shadowColor,
+    required this.disableColor,
+    this.playStore,
+    this.appStore,
+    this.sidebarItems,
+    this.shareButton,
+    this.reviewButton,
+    this.contactUsScreen,
+    required this.buttomBackground,
+    required this.appBar,
+  });
 
   final int selectedIndex;
   final Color shadowColor;

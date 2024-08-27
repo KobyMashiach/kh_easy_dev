@@ -26,10 +26,15 @@ part 'widgets/appbar.dart';
 part 'widgets/onwillpop.dart';
 part 'widgets/side_menu.dart';
 part 'widgets/divider.dart';
+part 'widgets/app_drawer.dart';
 
 // screens
 part 'screens/contactus.dart';
 
+// design
+part 'designs/drawer_design.dart';
+
 // models
 part 'models/contactus_model.dart';
 part 'models/sidebar_model.dart';
+part 'models/drawer_button_model.dart';

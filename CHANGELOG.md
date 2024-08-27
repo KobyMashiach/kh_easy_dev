@@ -1,3 +1,12 @@
+## 0.2.6
+fix drawer button onTap
+
+## 0.2.5
+new drawer hot fix
+
+## 0.2.4
+NEW DRAWER !!
+
 ## 0.2.3
 update dependencies and add dialog color in contact us phone dialog
 
