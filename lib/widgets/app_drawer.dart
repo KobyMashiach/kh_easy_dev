@@ -222,6 +222,7 @@ Widget _buttons(
     required String text,
     required bool isRtl,
     required enableColor,
+    bool bottomButtons = false,
     VoidCallback? onTap}) {
   final iconTextColor = enableColor ? Colors.white : Colors.grey[300];
   return Padding(
@@ -236,14 +237,16 @@ Widget _buttons(
           Icon(
             icon,
             color: iconTextColor,
-            size: 24,
+            size: bottomButtons ? 20 : 24,
           ),
           const SizedBox(width: 12),
           Text(
             text,
             style: TextStyle(
               color: iconTextColor,
-              fontSize: buttonsTextSize ?? 16,
+              fontSize: bottomButtons
+                  ? ((buttonsTextSize ?? 16) - 4)
+                  : (buttonsTextSize ?? 16),
             ),
           )
         ],
