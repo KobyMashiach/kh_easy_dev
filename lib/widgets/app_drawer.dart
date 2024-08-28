@@ -16,12 +16,13 @@ Widget kheasydevAppDrawerV2({
   bool? reviewButton,
   double? buttonsTextSize,
   BuildContext? context,
-  ContactusTransalte? languageCode,
+  String? languageCode,
 }) {
   final bool isRtl = Directionality.of(context!) == TextDirection.rtl;
   final double screenWidth = MediaQuery.of(context).size.width * 0.8;
   final double screenHeight = MediaQuery.of(context).size.height;
-
+  final ContactusTransalte? tempLanguageCode =
+      getlanguageCodeEnum(languageCode);
   return Container(
     width: screenWidth,
     decoration: BoxDecoration(
@@ -69,7 +70,7 @@ Widget kheasydevAppDrawerV2({
               appStore,
               shareButton,
               reviewButton,
-              languageCode),
+              tempLanguageCode),
           if (appDetails != null)
             _outColorInfo(context, isRtl, screenHeight, appDetails),
         ],

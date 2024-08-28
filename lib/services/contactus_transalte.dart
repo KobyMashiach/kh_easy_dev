@@ -73,6 +73,17 @@ Map<String, String> getContactUsMap(ContactusTransalte? languageCode) {
   };
 }
 
+ContactusTransalte getlanguageCodeEnum(String? languageCode) {
+  return switch (languageCode) {
+    'he' => ContactusTransalte.he,
+    'en' => ContactusTransalte.en,
+    'ru' => ContactusTransalte.ru,
+    'ar' => ContactusTransalte.ar,
+    'fr' => ContactusTransalte.fr,
+    _ => ContactusTransalte.he,
+  };
+}
+
 enum ContactusTransalte { he, en, ru, ar, fr }
 
 enum ContactusGetTranslate {
