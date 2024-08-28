@@ -12,6 +12,7 @@ class ContactUs extends StatelessWidget {
   final Color textColor;
   final Color? dialogColor;
   final List<CustomSocialField>? customSocials;
+  final ContactusTransalte? languageCode;
 
   const ContactUs({
     super.key,
@@ -26,6 +27,7 @@ class ContactUs extends StatelessWidget {
     this.tiktokUrl,
     this.instagram,
     this.customSocials,
+    this.languageCode,
   });
 
   showAlert(BuildContext context) {
@@ -143,7 +145,7 @@ class ContactUs extends StatelessWidget {
                 child: ListTile(
                   leading: const Icon(Typicons.link),
                   title: Text(
-                    'אתר אינטרנט',
+                    translateText(ContactusGetTranslate.website, languageCode),
                     style: TextStyle(
                       color: textColor,
                     ),
@@ -163,7 +165,7 @@ class ContactUs extends StatelessWidget {
                 child: ListTile(
                   leading: const Icon(Typicons.phone),
                   title: Text(
-                    'טלפון',
+                    translateText(ContactusGetTranslate.phone, languageCode),
                     style: TextStyle(
                       color: textColor,
                     ),
@@ -171,13 +173,15 @@ class ContactUs extends StatelessWidget {
                   onTap: () => showDialog(
                     context: context,
                     builder: (context) => KheasydevDialog(
-                      title: 'בחר דרך יצירת קשר',
+                      title: translateText(
+                          ContactusGetTranslate.dialogTitle, languageCode),
                       primaryColor: dialogColor,
                       description: phoneNumber,
                       isDismissable: true,
                       buttons: [
                         GenericButtonModel(
-                          text: "שיחה",
+                          text: translateText(
+                              ContactusGetTranslate.call, languageCode),
                           type: GenericButtonType.elevated,
                           onPressed: () {
                             launchUrl(Uri.parse('tel:${phoneNumber!}'));
@@ -185,7 +189,8 @@ class ContactUs extends StatelessWidget {
                           },
                         ),
                         GenericButtonModel(
-                          text: "הודעה",
+                          text: translateText(
+                              ContactusGetTranslate.message, languageCode),
                           type: GenericButtonType.elevated,
                           onPressed: () {
                             launchUrl(Uri.parse('sms:${phoneNumber!}'));
@@ -193,7 +198,8 @@ class ContactUs extends StatelessWidget {
                           },
                         ),
                         GenericButtonModel(
-                          text: "וואטסאפ",
+                          text: translateText(
+                              ContactusGetTranslate.whatsapp, languageCode),
                           type: GenericButtonType.elevated,
                           onPressed: () {
                             launchUrl(Uri.parse(
@@ -216,7 +222,7 @@ class ContactUs extends StatelessWidget {
               child: ListTile(
                 leading: const Icon(Typicons.mail),
                 title: Text(
-                  'אימייל',
+                  translateText(ContactusGetTranslate.email, languageCode),
                   style: TextStyle(
                     color: textColor,
                   ),
@@ -235,7 +241,7 @@ class ContactUs extends StatelessWidget {
                 child: ListTile(
                   leading: const Icon(Typicons.social_facebook),
                   title: Text(
-                    'פייסבוק',
+                    translateText(ContactusGetTranslate.facebook, languageCode),
                     style: TextStyle(
                       color: textColor,
                     ),
@@ -256,7 +262,8 @@ class ContactUs extends StatelessWidget {
                 child: ListTile(
                   leading: const Icon(Typicons.social_instagram),
                   title: Text(
-                    'אינסטגרם',
+                    translateText(
+                        ContactusGetTranslate.instegram, languageCode),
                     style: TextStyle(
                       color: textColor,
                     ),
@@ -278,7 +285,7 @@ class ContactUs extends StatelessWidget {
                 child: ListTile(
                   leading: const Icon(Icons.tiktok),
                   title: Text(
-                    'טיקטוק',
+                    translateText(ContactusGetTranslate.tiktok, languageCode),
                     style: TextStyle(
                       color: textColor,
                     ),

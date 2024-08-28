@@ -8,6 +8,7 @@ library kh_easy_dev;
 
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:kh_easy_dev/services/contactus_transalte.dart';
 import 'dart:async';
 import 'package:kh_easy_dev/widgets/navigate_page.dart';
 import 'dart:io';
