@@ -223,7 +223,7 @@ Widget _buttons(
     required bool isRtl,
     required enableColor,
     VoidCallback? onTap}) {
-  final iconTextColor = enableColor ? Colors.white : Colors.grey;
+  final iconTextColor = enableColor ? Colors.white : Colors.grey[300];
   return Padding(
     padding: EdgeInsets.only(
       right: isRtl ? screenWidth * 0.05 : 0,
