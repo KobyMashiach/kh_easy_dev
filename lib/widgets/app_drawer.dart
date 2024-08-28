@@ -15,7 +15,6 @@ Widget kheasydevAppDrawerV2({
   bool? reviewButton,
   double? buttonsTextSize,
   BuildContext? context,
-  required bool enableColor,
 }) {
   final bool isRtl = Directionality.of(context!) == TextDirection.rtl;
   final double screenWidth = MediaQuery.of(context).size.width * 0.8;
