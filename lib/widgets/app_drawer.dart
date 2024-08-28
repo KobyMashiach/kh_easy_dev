@@ -358,7 +358,7 @@ List<DrawerButtonModel> _getBottomList(
         ),
       if (reviewButton != false)
         DrawerButtonModel(
-          text: 'דרג',
+          text: translateText(ContactusGetTranslate.rateApp, languageCode),
           icon: const Icon(Icons.rate_review),
           enableColor: true,
           onTap: () async {
