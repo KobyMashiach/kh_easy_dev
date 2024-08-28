@@ -3,12 +3,12 @@ part of kh_easy_dev;
 class ContactUsScreen extends StatelessWidget {
   final PreferredSizeWidget appBar;
   final Color buttomBackground;
-  final Color? dialogColor;
+  final Color dialogColor;
   const ContactUsScreen(
       {super.key,
       required this.appBar,
       required this.buttomBackground,
-      this.dialogColor});
+      required this.dialogColor});
 
   @override
   Widget build(
