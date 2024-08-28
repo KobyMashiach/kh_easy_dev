@@ -36,9 +36,9 @@ class KheasydevNavigatePage {
     } catch (e) {}
   }
 
-  pop(BuildContext context) {
+  pop(BuildContext context, {dynamic value}) {
     try {
-      Navigator.of(context).pop();
+      Navigator.of(context).pop(value);
     } catch (e) {}
   }
 
