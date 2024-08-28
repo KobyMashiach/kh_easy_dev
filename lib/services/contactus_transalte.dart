@@ -1,5 +1,9 @@
 Map<String, String> heContactusTranslate = {
-  "call": " שיחה",
+  "contact_us": "יצירת קשר",
+  "share_app": "שיתוף האפליקציה",
+  "rate_app": "דרג את האפליקציה",
+  "dialog_title": "בחר דרך התקשרות",
+  "call": "שיחה",
   "message": "הודעה",
   "whatsapp": "וואטסאפ",
   "website": "אתר אינטרנט",
@@ -11,6 +15,9 @@ Map<String, String> heContactusTranslate = {
 };
 
 Map<String, String> enContactusTranslate = {
+  "contact_us": "Contact Us",
+  "share_app": "Sharing the app",
+  "rate_app": "Rate the app",
   "dialog_title": "Choose a Contact Method",
   "call": "Call",
   "message": "Message",
@@ -24,6 +31,9 @@ Map<String, String> enContactusTranslate = {
 };
 
 Map<String, String> ruContactusTranslate = {
+  "contact_us": "Свяжитесь с нами",
+  "share_app": "Поделиться приложением",
+  "rate_app": "Оценить приложение",
   "dialog_title": "Выберите способ связи",
   "call": "Звонок",
   "message": "Сообщение",
@@ -37,6 +47,9 @@ Map<String, String> ruContactusTranslate = {
 };
 
 Map<String, String> arContactusTranslate = {
+  "contact_us": "اتصل بنا",
+  "share_app": "مشاركة التطبيق",
+  "rate_app": "قيم التطبيق",
   "dialog_title": "اختر وسيلة اتصال",
   "call": "مكالمة",
   "message": "رسالة",
@@ -50,6 +63,9 @@ Map<String, String> arContactusTranslate = {
 };
 
 Map<String, String> frContactusTranslate = {
+  "contact_us": "Contactez-nous",
+  "share_app": "Partager l'application",
+  "rate_app": "Évaluer l'application",
   "dialog_title": "Choisir une méthode de contact",
   "call": "Appel",
   "message": "Message",
@@ -87,6 +103,9 @@ ContactusTransalte getlanguageCodeEnum(String? languageCode) {
 enum ContactusTransalte { he, en, ru, ar, fr }
 
 enum ContactusGetTranslate {
+  contactUs,
+  shareApp,
+  rateApp,
   dialogTitle,
   call,
   message,

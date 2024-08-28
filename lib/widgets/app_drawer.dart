@@ -21,8 +21,7 @@ Widget kheasydevAppDrawerV2({
   final bool isRtl = Directionality.of(context!) == TextDirection.rtl;
   final double screenWidth = MediaQuery.of(context).size.width * 0.8;
   final double screenHeight = MediaQuery.of(context).size.height;
-  final ContactusTransalte? tempLanguageCode =
-      getlanguageCodeEnum(languageCode);
+  final ContactusTransalte tempLanguageCode = getlanguageCodeEnum(languageCode);
   return Container(
     width: screenWidth,
     decoration: BoxDecoration(
@@ -331,7 +330,7 @@ List<DrawerButtonModel> _getBottomList(
         ContactusTransalte? languageCode) =>
     [
       DrawerButtonModel(
-        text: 'יצירת קשר',
+        text: translateText(ContactusGetTranslate.contactUs, languageCode),
         icon: const Icon(Icons.contact_page),
         enableColor: true,
         page: contactUsScreen ??
@@ -344,7 +343,7 @@ List<DrawerButtonModel> _getBottomList(
       ),
       if (shareButton != false)
         DrawerButtonModel(
-          text: 'שיתוף האפליקציה',
+          text: translateText(ContactusGetTranslate.shareApp, languageCode),
           icon: const Icon(Icons.share),
           enableColor: true,
           onTap: () {
