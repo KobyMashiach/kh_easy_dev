@@ -1,3 +1,6 @@
+## 0.2.7
+new drawer - add option to change text size
+
 ## 0.2.6
 fix drawer button onTap
 

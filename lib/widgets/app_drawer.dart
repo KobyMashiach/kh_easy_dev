@@ -13,6 +13,7 @@ Widget kheasydevAppDrawerV2({
   String? appStore,
   bool? shareButton,
   bool? reviewButton,
+  double? buttonsTextSize,
   BuildContext? context,
 }) {
   final bool isRtl = Directionality.of(context!) == TextDirection.rtl;
@@ -53,6 +54,7 @@ Widget kheasydevAppDrawerV2({
               context,
               screenWidth,
               screenHeight,
+              buttonsTextSize,
               name,
               profileImage,
               isRtl,
@@ -76,6 +78,7 @@ Widget _inColorMenu(
     BuildContext context,
     double screenWidth,
     double screenHeight,
+    double? buttonsTextSize,
     String name,
     String? profileImage,
     bool isRtl,
@@ -87,7 +90,8 @@ Widget _inColorMenu(
     String? appStore,
     bool? shareButton,
     bool? reviewButton) {
-  final buttonsList = _buildDrawerButtons(context, screenWidth, isRtl, buttons);
+  final buttonsList = _buildDrawerButtons(
+      context, screenWidth, buttonsTextSize, isRtl, buttons);
   final bottomButtonsList = _buildBottomButtons(
       context,
       screenWidth,
@@ -95,6 +99,7 @@ Widget _inColorMenu(
       contactUsScreen,
       appBar,
       buttomBackground,
+      buttonsTextSize,
       playStore,
       appStore,
       shareButton,
@@ -140,11 +145,12 @@ Widget _inColorMenu(
 }
 
 List<Widget> _buildDrawerButtons(BuildContext context, double screenWidth,
-    bool isRtl, List<DrawerButtonModel>? buttons) {
+    double? buttonsTextSize, bool isRtl, List<DrawerButtonModel>? buttons) {
   return buttons?.map((button) {
         return _buttons(
           context,
           screenWidth,
+          buttonsTextSize,
           icon: button.icon.icon!,
           text: button.text,
           isRtl: isRtl,
@@ -163,6 +169,7 @@ List<Widget> _buildBottomButtons(
     Widget? contactUsScreen,
     PreferredSizeWidget appBar,
     Color buttomBackground,
+    double? buttonsTextSize,
     String? playStore,
     String? appStore,
     bool? shareButton,
@@ -173,6 +180,7 @@ List<Widget> _buildBottomButtons(
     return _buttons(
       context,
       screenWidth,
+      buttonsTextSize,
       icon: button.icon.icon!,
       text: button.text,
       isRtl: isRtl,
@@ -200,7 +208,8 @@ Positioned _closeButton(BuildContext context, bool isRtl) {
   );
 }
 
-Widget _buttons(BuildContext context, double screenWidth,
+Widget _buttons(
+    BuildContext context, double screenWidth, double? buttonsTextSize,
     {required IconData icon,
     required String text,
     required bool isRtl,
@@ -222,9 +231,9 @@ Widget _buttons(BuildContext context, double screenWidth,
           const SizedBox(width: 12),
           Text(
             text,
-            style: const TextStyle(
+            style: TextStyle(
               color: Colors.white,
-              fontSize: 16,
+              fontSize: buttonsTextSize ?? 16,
             ),
           )
         ],
