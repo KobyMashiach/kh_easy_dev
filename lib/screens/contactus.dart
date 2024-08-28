@@ -4,11 +4,14 @@ class ContactUsScreen extends StatelessWidget {
   final PreferredSizeWidget appBar;
   final Color buttomBackground;
   final Color? dialogColor;
-  const ContactUsScreen(
-      {super.key,
-      required this.appBar,
-      required this.buttomBackground,
-      this.dialogColor});
+  final ContactusTransalte? languageCode;
+  const ContactUsScreen({
+    super.key,
+    required this.appBar,
+    required this.buttomBackground,
+    this.dialogColor,
+    this.languageCode,
+  });
 
   @override
   Widget build(
@@ -19,6 +22,7 @@ class ContactUsScreen extends StatelessWidget {
       body: ContactUs(
         textColor: buttomBackground,
         dialogColor: dialogColor ?? Colors.white,
+        languageCode: languageCode,
         logo: const AssetImage('assets/logo.png'),
         email: 'easynews@gifture.co.il',
         companyName: 'K&H Easy Dev',

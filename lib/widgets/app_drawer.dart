@@ -16,6 +16,7 @@ Widget kheasydevAppDrawerV2({
   bool? reviewButton,
   double? buttonsTextSize,
   BuildContext? context,
+  ContactusTransalte? languageCode,
 }) {
   final bool isRtl = Directionality.of(context!) == TextDirection.rtl;
   final double screenWidth = MediaQuery.of(context).size.width * 0.8;
@@ -67,7 +68,8 @@ Widget kheasydevAppDrawerV2({
               playStore,
               appStore,
               shareButton,
-              reviewButton),
+              reviewButton,
+              languageCode),
           if (appDetails != null)
             _outColorInfo(context, isRtl, screenHeight, appDetails),
         ],
@@ -77,22 +79,24 @@ Widget kheasydevAppDrawerV2({
 }
 
 Widget _inColorMenu(
-    BuildContext context,
-    double screenWidth,
-    double screenHeight,
-    double? buttonsTextSize,
-    String name,
-    String? profileImage,
-    bool isRtl,
-    List<DrawerButtonModel>? buttons,
-    Widget? contactUsScreen,
-    PreferredSizeWidget appBar,
-    Color contactsScreenButtomBackground,
-    Color contactsScreenDialogColor,
-    String? playStore,
-    String? appStore,
-    bool? shareButton,
-    bool? reviewButton) {
+  BuildContext context,
+  double screenWidth,
+  double screenHeight,
+  double? buttonsTextSize,
+  String name,
+  String? profileImage,
+  bool isRtl,
+  List<DrawerButtonModel>? buttons,
+  Widget? contactUsScreen,
+  PreferredSizeWidget appBar,
+  Color contactsScreenButtomBackground,
+  Color contactsScreenDialogColor,
+  String? playStore,
+  String? appStore,
+  bool? shareButton,
+  bool? reviewButton,
+  ContactusTransalte? languageCode,
+) {
   final buttonsList = _buildDrawerButtons(
       context, screenWidth, buttonsTextSize, isRtl, buttons);
   final bottomButtonsList = _buildBottomButtons(
@@ -107,7 +111,8 @@ Widget _inColorMenu(
       playStore,
       appStore,
       shareButton,
-      reviewButton);
+      reviewButton,
+      languageCode);
 
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -168,27 +173,31 @@ List<Widget> _buildDrawerButtons(BuildContext context, double screenWidth,
 }
 
 List<Widget> _buildBottomButtons(
-    BuildContext context,
-    double screenWidth,
-    bool isRtl,
-    Widget? contactUsScreen,
-    PreferredSizeWidget appBar,
-    Color contactsScreenButtomBackground,
-    Color contactsScreenDialogColor,
-    double? buttonsTextSize,
-    String? playStore,
-    String? appStore,
-    bool? shareButton,
-    bool? reviewButton) {
+  BuildContext context,
+  double screenWidth,
+  bool isRtl,
+  Widget? contactUsScreen,
+  PreferredSizeWidget appBar,
+  Color contactsScreenButtomBackground,
+  Color contactsScreenDialogColor,
+  double? buttonsTextSize,
+  String? playStore,
+  String? appStore,
+  bool? shareButton,
+  bool? reviewButton,
+  ContactusTransalte? languageCode,
+) {
   final List<DrawerButtonModel> bottomList = _getBottomList(
-      contactUsScreen,
-      appBar,
-      contactsScreenButtomBackground,
-      contactsScreenDialogColor,
-      playStore,
-      appStore,
-      shareButton,
-      reviewButton);
+    contactUsScreen,
+    appBar,
+    contactsScreenButtomBackground,
+    contactsScreenDialogColor,
+    playStore,
+    appStore,
+    shareButton,
+    reviewButton,
+    languageCode,
+  );
   return bottomList.map((button) {
     return _buttons(
       context,
@@ -317,7 +326,8 @@ List<DrawerButtonModel> _getBottomList(
         String? playStore,
         String? appStore,
         bool? shareButton,
-        bool? reviewButton) =>
+        bool? reviewButton,
+        ContactusTransalte? languageCode) =>
     [
       DrawerButtonModel(
         text: 'יצירת קשר',
@@ -328,6 +338,7 @@ List<DrawerButtonModel> _getBottomList(
               appBar: appBar,
               buttomBackground: contactsScreenButtomBackground,
               dialogColor: contactsScreenDialogColor,
+              languageCode: languageCode,
             ),
       ),
       if (shareButton != false)
