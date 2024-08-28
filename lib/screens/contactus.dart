@@ -3,12 +3,12 @@ part of kh_easy_dev;
 class ContactUsScreen extends StatelessWidget {
   final PreferredSizeWidget appBar;
   final Color buttomBackground;
-  final Color dialogColor;
+  final Color? dialogColor;
   const ContactUsScreen(
       {super.key,
       required this.appBar,
       required this.buttomBackground,
-      required this.dialogColor});
+      this.dialogColor});
 
   @override
   Widget build(
@@ -18,7 +18,7 @@ class ContactUsScreen extends StatelessWidget {
       appBar: appBar,
       body: ContactUs(
         textColor: buttomBackground,
-        dialogColor: dialogColor,
+        dialogColor: dialogColor ?? Colors.white,
         logo: const AssetImage('assets/logo.png'),
         email: 'easynews@gifture.co.il',
         companyName: 'K&H Easy Dev',
