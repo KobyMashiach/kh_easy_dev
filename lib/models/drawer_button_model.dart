@@ -5,11 +5,13 @@ class DrawerButtonModel {
   final Icon icon;
   final Widget? page;
   final VoidCallback? onTap;
+  final bool enableColor;
 
   DrawerButtonModel({
     required this.text,
     required this.icon,
     this.page,
     this.onTap,
+    required this.enableColor,
   });
 }

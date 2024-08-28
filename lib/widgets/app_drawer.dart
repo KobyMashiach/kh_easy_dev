@@ -55,7 +55,6 @@ Widget kheasydevAppDrawerV2({
               context,
               screenWidth,
               screenHeight,
-              enableColor,
               buttonsTextSize,
               name,
               profileImage,
@@ -80,7 +79,6 @@ Widget _inColorMenu(
     BuildContext context,
     double screenWidth,
     double screenHeight,
-    bool enableColor,
     double? buttonsTextSize,
     String name,
     String? profileImage,
@@ -94,11 +92,10 @@ Widget _inColorMenu(
     bool? shareButton,
     bool? reviewButton) {
   final buttonsList = _buildDrawerButtons(
-      context, screenWidth, enableColor, buttonsTextSize, isRtl, buttons);
+      context, screenWidth, buttonsTextSize, isRtl, buttons);
   final bottomButtonsList = _buildBottomButtons(
       context,
       screenWidth,
-      enableColor,
       isRtl,
       contactUsScreen,
       appBar,
@@ -148,22 +145,16 @@ Widget _inColorMenu(
   );
 }
 
-List<Widget> _buildDrawerButtons(
-  BuildContext context,
-  double screenWidth,
-  bool enableColor,
-  double? buttonsTextSize,
-  bool isRtl,
-  List<DrawerButtonModel>? buttons,
-) {
+List<Widget> _buildDrawerButtons(BuildContext context, double screenWidth,
+    double? buttonsTextSize, bool isRtl, List<DrawerButtonModel>? buttons) {
   return buttons?.map((button) {
         return _buttons(
           context,
           screenWidth,
           buttonsTextSize,
           icon: button.icon.icon!,
-          enableColor: enableColor,
           text: button.text,
+          enableColor: button.enableColor,
           isRtl: isRtl,
           onTap: button.onTap ??
               () => KheasydevNavigatePage()
@@ -176,7 +167,6 @@ List<Widget> _buildDrawerButtons(
 List<Widget> _buildBottomButtons(
     BuildContext context,
     double screenWidth,
-    bool enableColor,
     bool isRtl,
     Widget? contactUsScreen,
     PreferredSizeWidget appBar,
@@ -201,8 +191,8 @@ List<Widget> _buildBottomButtons(
       buttonsTextSize,
       icon: button.icon.icon!,
       text: button.text,
+      enableColor: button.enableColor,
       isRtl: isRtl,
-      enableColor: enableColor,
       onTap: () =>
           button.onTap ??
           KheasydevNavigatePage()
@@ -232,8 +222,8 @@ Widget _buttons(
     {required IconData icon,
     required String text,
     required bool isRtl,
-    VoidCallback? onTap,
-    required bool enableColor}) {
+    required enableColor,
+    VoidCallback? onTap}) {
   final iconTextColor = enableColor ? Colors.white : Colors.grey;
   return Padding(
     padding: EdgeInsets.only(
@@ -323,6 +313,7 @@ List<DrawerButtonModel> _getBottomList(
       DrawerButtonModel(
         text: 'יצירת קשר',
         icon: const Icon(Icons.contact_page),
+        enableColor: true,
         page: contactUsScreen ??
             ContactUsScreen(
               appBar: appBar,
@@ -333,6 +324,7 @@ List<DrawerButtonModel> _getBottomList(
         DrawerButtonModel(
           text: 'שיתוף האפליקציה',
           icon: const Icon(Icons.share),
+          enableColor: true,
           onTap: () {
             if (!kIsWeb) {
               Share.share(
@@ -347,6 +339,7 @@ List<DrawerButtonModel> _getBottomList(
         DrawerButtonModel(
           text: 'דרג',
           icon: const Icon(Icons.rate_review),
+          enableColor: true,
           onTap: () async {
             if (await inAppReview.isAvailable()) {
               inAppReview.requestReview();
