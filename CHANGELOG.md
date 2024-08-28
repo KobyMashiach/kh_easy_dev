@@ -1,3 +1,6 @@
+## 0.2.8
+add in new drawer a enable colors to buttons
+
 ## 0.2.7
 new drawer - add option to change text size
 
