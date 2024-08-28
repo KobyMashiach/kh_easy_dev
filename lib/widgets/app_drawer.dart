@@ -134,7 +134,7 @@ Widget _inColorMenu(
                 itemCount: bottomButtonsList.length,
                 itemBuilder: (context, index) => bottomButtonsList[index],
                 separatorBuilder: (context, index) =>
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 20),
               ),
             ],
           ),
