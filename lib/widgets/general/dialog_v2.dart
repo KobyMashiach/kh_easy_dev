@@ -101,6 +101,7 @@ class KhEasydevDialogV2 extends StatelessWidget {
                               textSize: buttonsTextSize,
                               primaryColor: primaryColor,
                               textColor: buttonsTextColor,
+                              onTap: () => Navigator.of(context).pop(true),
                             ),
                           ),
                           if (!oneButton)
@@ -111,6 +112,7 @@ class KhEasydevDialogV2 extends StatelessWidget {
                                 primaryColor: primaryColor,
                                 unfillColors: true,
                                 textColor: buttonsTextColor,
+                                onTap: () => Navigator.of(context).pop(false),
                               ),
                             ),
                         ]
