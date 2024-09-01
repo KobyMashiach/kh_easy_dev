@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kh_easy_dev/widgets/input/app_button.dart';
+import 'package:kh_easy_dev/widgets/input/app_button_widget.dart';
 
 class KhEasydevDialogV2 extends StatelessWidget {
   final String title;
@@ -11,7 +11,7 @@ class KhEasydevDialogV2 extends StatelessWidget {
   final double? buttonsTextSize;
   final bool oneButton;
   final bool noButtons;
-  final List<KheasydevAppButton>? buttons;
+  final List<Widget>? buttons;
   final String? okButtonText;
   final String? cancelButtonText;
   final bool childBeforeTitle;
@@ -96,7 +96,7 @@ class KhEasydevDialogV2 extends StatelessWidget {
                               .toList(),
                         if (buttons == null && !noButtons) ...[
                           Expanded(
-                            child: KheasydevAppButton(
+                            child: kheasydevAppButton(
                               text: okButtonText ?? "OK",
                               textSize: buttonsTextSize,
                               primaryColor: primaryColor,
@@ -106,7 +106,7 @@ class KhEasydevDialogV2 extends StatelessWidget {
                           ),
                           if (!oneButton)
                             Expanded(
-                              child: KheasydevAppButton(
+                              child: kheasydevAppButton(
                                 text: cancelButtonText ?? "Cancel",
                                 textSize: buttonsTextSize,
                                 primaryColor: primaryColor,
