@@ -1,3 +1,6 @@
+## 0.2.9
+add new dialog and new buttons
+
 ## 0.2.8
 add in new drawer a enable colors to buttons
 
