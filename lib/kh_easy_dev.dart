@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:kh_easy_dev/services/contactus_transalte.dart';
 import 'dart:async';
-import 'package:kh_easy_dev/widgets/navigate_page.dart';
+import 'package:kh_easy_dev/services/navigate_page.dart';
 import 'dart:io';
 import 'package:flutter/foundation.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -21,13 +21,13 @@ import 'package:typicons_flutter/typicons_flutter.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 // widgets
-part 'widgets/app_toast.dart';
-part 'widgets/dialog.dart';
-part 'widgets/appbar.dart';
+part 'widgets/general/app_toast.dart';
+part 'widgets/general/dialog.dart';
+part 'widgets/general/appbar.dart';
 part 'widgets/onwillpop.dart';
-part 'widgets/side_menu.dart';
-part 'widgets/divider.dart';
-part 'widgets/app_drawer.dart';
+part 'widgets/general/side_menu.dart';
+part 'widgets/design/divider.dart';
+part 'widgets/design/app_drawer.dart';
 
 // screens
 part 'screens/contactus.dart';
