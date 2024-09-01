@@ -49,7 +49,7 @@ class KheasydevAppButton extends StatelessWidget {
                       : primaryColor ?? Colors.black
                   : Colors.black,
               fontWeight: FontWeight.bold,
-              fontSize: textSize ?? 24,
+              fontSize: textSize ?? 20,
             ),
           ),
         ),
