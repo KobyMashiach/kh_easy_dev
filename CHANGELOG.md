@@ -1,3 +1,6 @@
+## 0.3.0
+*hotfix - appbuttons
+
 ## 0.2.9
 add new dialog and new buttons
 
