@@ -47,4 +47,75 @@ class KheasydevNavigatePage {
       Get.to(page);
     } catch (e) {}
   }
+
+  pushDuration(BuildContext context, Widget page,
+      {Duration duration = const Duration(milliseconds: 300)}) {
+    try {
+      Navigator.of(context).push(
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => page,
+          transitionDuration: duration,
+          transitionsBuilder: (_, animation, __, child) =>
+              FadeTransition(opacity: animation, child: child),
+        ),
+      );
+    } catch (e) {}
+  }
+
+  pushAndRemoveUntilDuration(BuildContext context, Widget page,
+      {Duration duration = const Duration(milliseconds: 300)}) {
+    try {
+      Navigator.of(context).pushAndRemoveUntil(
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => page,
+          transitionDuration: duration,
+          transitionsBuilder: (_, animation, __, child) =>
+              FadeTransition(opacity: animation, child: child),
+        ),
+        (route) => false,
+      );
+    } catch (e) {}
+  }
+
+  pushReplacementDuration(BuildContext context, Widget page,
+      {Duration duration = const Duration(milliseconds: 300)}) {
+    try {
+      Navigator.of(context).pushReplacement(
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => page,
+          transitionDuration: duration,
+          transitionsBuilder: (_, animation, __, child) =>
+              FadeTransition(opacity: animation, child: child),
+        ),
+      );
+    } catch (e) {}
+  }
+
+  popDuration(BuildContext context,
+      {dynamic value, Duration duration = const Duration(milliseconds: 300)}) {
+    try {
+      Navigator.of(context).pop(
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => Container(),
+          transitionDuration: duration,
+          transitionsBuilder: (_, animation, __, child) =>
+              FadeTransition(opacity: animation, child: child),
+        ),
+      );
+    } catch (e) {}
+  }
+
+  maybePopDuration(BuildContext context,
+      {dynamic value, Duration duration = const Duration(milliseconds: 300)}) {
+    try {
+      Navigator.of(context).maybePop(
+        PageRouteBuilder(
+          pageBuilder: (_, __, ___) => Container(),
+          transitionDuration: duration,
+          transitionsBuilder: (_, animation, __, child) =>
+              FadeTransition(opacity: animation, child: child),
+        ),
+      );
+    } catch (e) {}
+  }
 }
