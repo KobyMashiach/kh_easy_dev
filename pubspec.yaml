@@ -24,7 +24,7 @@ dependencies:
 
   # readers
   flutter_svg: ^2.0.7
-  http: ^1.1.0
+  # http: ^1.1.0
 
   # state managment
   flutter_bloc: ^8.1.3
