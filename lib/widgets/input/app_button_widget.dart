@@ -6,6 +6,7 @@ Widget kheasydevAppButton({
   bool unfillColors = false,
   bool disableColors = false,
   EdgeInsets? padding,
+  EdgeInsets? margin,
   double? textSize,
   Color? primaryColor,
   Color? textColor,
@@ -14,7 +15,7 @@ Widget kheasydevAppButton({
     onTap: onTap,
     child: Container(
       padding: padding ?? const EdgeInsets.all(12.0),
-      margin: padding ?? const EdgeInsets.symmetric(horizontal: 12),
+      margin: margin ?? const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
         color: !disableColors
             ? !unfillColors
