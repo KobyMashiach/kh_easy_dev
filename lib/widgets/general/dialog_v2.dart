@@ -9,6 +9,8 @@ class KhEasydevDialogV2 extends StatelessWidget {
   final Color? primaryColor;
   final Color? buttonsTextColor;
   final double? buttonsTextSize;
+  final double? titleTextSize;
+  final double? descriptionTextSize;
   final bool oneButton;
   final bool noButtons;
   final List<Widget>? buttons;
@@ -28,6 +30,8 @@ class KhEasydevDialogV2 extends StatelessWidget {
     this.primaryColor,
     this.buttonsTextColor,
     this.buttonsTextSize,
+    this.titleTextSize,
+    this.descriptionTextSize,
     this.oneButton = false,
     this.noButtons = false,
     this.buttons,
@@ -66,8 +70,8 @@ class KhEasydevDialogV2 extends StatelessWidget {
                     if (child != null && childBeforeTitle) child!,
                     Text(
                       title,
-                      style: const TextStyle(
-                        fontSize: 20,
+                      style: TextStyle(
+                        fontSize: titleTextSize ?? 20,
                         fontWeight: FontWeight.bold,
                       ),
                       textAlign: TextAlign.center,
@@ -77,8 +81,8 @@ class KhEasydevDialogV2 extends StatelessWidget {
                         padding: const EdgeInsets.only(top: 8.0),
                         child: Text(
                           description!,
-                          style: const TextStyle(
-                            fontSize: 16,
+                          style: TextStyle(
+                            fontSize: descriptionTextSize ?? 16,
                             fontWeight: FontWeight.bold,
                           ),
                           textAlign: TextAlign.center,
