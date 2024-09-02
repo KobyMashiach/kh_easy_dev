@@ -13,7 +13,7 @@ Widget kheasydevAppButton({
   return GestureDetector(
     onTap: onTap,
     child: Container(
-      padding: const EdgeInsets.all(12.0),
+      padding: padding ?? const EdgeInsets.all(12.0),
       margin: padding ?? const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
         color: !disableColors
