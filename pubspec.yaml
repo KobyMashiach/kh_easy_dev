@@ -19,7 +19,7 @@ dependencies:
 
   # notification & share
   fluttertoast: ^8.2.6
-  share_plus: ^9.0.0
+  share_plus: ^10.0.2
   in_app_review: ^2.0.9
 
   # readers
