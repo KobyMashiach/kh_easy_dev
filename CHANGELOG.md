@@ -1,3 +1,9 @@
+## 0.3.1
+* add animate navigate
+* fix dialog v2
+* fix drawer v2
+* update packages
+
 ## 0.3.0
 *hotfix - appbuttons
 

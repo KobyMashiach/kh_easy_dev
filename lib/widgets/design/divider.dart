@@ -32,7 +32,7 @@ Widget kheasydevDivider({double? height, EdgeInsets? padding, bool? black}) {
 Widget kheasydevVerticalDivider(
     {double? height, EdgeInsets? padding, bool? black}) {
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 16),
+    padding: padding ?? const EdgeInsets.symmetric(horizontal: 16),
     child: SizedBox(
       width: 1,
       height: 60,
