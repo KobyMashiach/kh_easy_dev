@@ -20,28 +20,29 @@ class KhEasydevDialogV2 extends StatelessWidget {
   final Widget? child;
   final double? height;
   final double? width;
+  final VoidCallback? okButtonOnTap;
 
-  const KhEasydevDialogV2({
-    super.key,
-    required this.title,
-    this.description,
-    this.shouldDisplayX = true,
-    this.backgroundColor,
-    this.primaryColor,
-    this.buttonsTextColor,
-    this.buttonsTextSize,
-    this.titleTextSize,
-    this.descriptionTextSize,
-    this.oneButton = false,
-    this.noButtons = false,
-    this.buttons,
-    this.okButtonText,
-    this.cancelButtonText,
-    this.childBeforeTitle = false,
-    this.child,
-    this.height,
-    this.width,
-  });
+  const KhEasydevDialogV2(
+      {super.key,
+      required this.title,
+      this.description,
+      this.shouldDisplayX = true,
+      this.backgroundColor,
+      this.primaryColor,
+      this.buttonsTextColor,
+      this.buttonsTextSize,
+      this.titleTextSize,
+      this.descriptionTextSize,
+      this.oneButton = false,
+      this.noButtons = false,
+      this.buttons,
+      this.okButtonText,
+      this.cancelButtonText,
+      this.childBeforeTitle = false,
+      this.child,
+      this.height,
+      this.width,
+      this.okButtonOnTap});
 
   @override
   Widget build(BuildContext context) {
@@ -105,7 +106,8 @@ class KhEasydevDialogV2 extends StatelessWidget {
                               textSize: buttonsTextSize,
                               primaryColor: primaryColor,
                               textColor: buttonsTextColor,
-                              onTap: () => Navigator.of(context).pop(true),
+                              onTap: okButtonOnTap ??
+                                  () => Navigator.of(context).pop(true),
                             ),
                           ),
                           if (!oneButton)

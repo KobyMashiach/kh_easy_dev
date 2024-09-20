@@ -1,3 +1,6 @@
+## 0.3.2
+* dialog v2 - add on ok button tap function
+
 ## 0.3.1
 * add animate navigate
 * fix dialog v2
