@@ -1,5 +1,6 @@
 ## 0.3.2
 * dialog v2 - add on ok button tap function
+* fix vertical divider
 
 ## 0.3.1
 * add animate navigate
