@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:kh_easy_dev/widgets/input/app_button_widget.dart';
 
 class KhEasydevDialogV2 extends StatelessWidget {
-  final String title;
+  final String? title;
   final String? description;
   final bool shouldDisplayX;
   final Color? backgroundColor;
@@ -24,7 +24,7 @@ class KhEasydevDialogV2 extends StatelessWidget {
 
   const KhEasydevDialogV2(
       {super.key,
-      required this.title,
+      this.title,
       this.description,
       this.shouldDisplayX = true,
       this.backgroundColor,
@@ -69,14 +69,15 @@ class KhEasydevDialogV2 extends StatelessWidget {
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     if (child != null && childBeforeTitle) child!,
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontSize: titleTextSize ?? 20,
-                        fontWeight: FontWeight.bold,
+                    if (title != null)
+                      Text(
+                        title!,
+                        style: TextStyle(
+                          fontSize: titleTextSize ?? 20,
+                          fontWeight: FontWeight.bold,
+                        ),
+                        textAlign: TextAlign.center,
                       ),
-                      textAlign: TextAlign.center,
-                    ),
                     if (description != null)
                       Padding(
                         padding: const EdgeInsets.only(top: 8.0),
