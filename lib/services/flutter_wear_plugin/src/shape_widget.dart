@@ -1,11 +1,12 @@
 import 'package:flutter/widgets.dart';
-import 'package:wear/src/wear.dart';
+import 'package:kh_easy_dev/services/flutter_wear_plugin/src/wear.dart';
 
 /// Shape of a Wear device
 enum WearShape { square, round }
 
 /// Builds a child for a [WatchShape]
-typedef Widget WatchShapeBuilder(BuildContext context, WearShape shape, Widget? child);
+typedef WatchShapeBuilder = Widget Function(
+    BuildContext context, WearShape shape, Widget? child);
 
 /// Builder widget for watch shapes
 @immutable
@@ -41,7 +42,8 @@ class _WatchShapeState extends State<WatchShape> {
     _shape = WearShape.round;
     Wear.instance.getShape().then((String shape) {
       if (mounted) {
-        setState(() => _shape = (shape == 'round' ? WearShape.round : WearShape.square));
+        setState(() =>
+            _shape = (shape == 'round' ? WearShape.round : WearShape.square));
       }
     });
   }
@@ -61,7 +63,8 @@ class _WatchShapeState extends State<WatchShape> {
 }
 
 /// An inherited widget that holds the shape of the Watch
-@Deprecated("Add WatchShape instead and use WatchShape.of(context) to get the shape value.")
+@Deprecated(
+    "Add WatchShape instead and use WatchShape.of(context) to get the shape value.")
 class InheritedShape extends InheritedWidget {
   const InheritedShape({
     Key? key,

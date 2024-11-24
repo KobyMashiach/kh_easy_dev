@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:wear/src/wear.dart';
+import 'package:kh_easy_dev/services/flutter_wear_plugin/src/wear.dart';
 
 /// Ambient modes for a Wear device
 enum WearMode { active, ambient }
 
 /// Builds a child for [AmbientMode]
-typedef Widget AmbientModeWidgetBuilder(BuildContext context, WearMode mode, Widget? child);
+typedef AmbientModeWidgetBuilder = Widget Function(
+    BuildContext context, WearMode mode, Widget? child);
 
 /// Widget that listens for when a Wear device enters full power or ambient mode,
 /// and provides this in a builder. It optionally takes an [onUpdate] function that's
@@ -27,12 +28,16 @@ class AmbientMode extends StatefulWidget {
 
   /// Get current [WearMode].
   static WearMode wearModeOf(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<_InheritedAmbientMode>()!.mode;
+    return context
+        .dependOnInheritedWidgetOfExactType<_InheritedAmbientMode>()!
+        .mode;
   }
 
   /// Get current [AmbientDetails].
   static AmbientDetails ambientDetailsOf(BuildContext context) {
-    return context.dependOnInheritedWidgetOfExactType<_InheritedAmbientMode>()!.details;
+    return context
+        .dependOnInheritedWidgetOfExactType<_InheritedAmbientMode>()!
+        .details;
   }
 
   @override
@@ -41,7 +46,7 @@ class AmbientMode extends StatefulWidget {
 
 class _AmbientModeState extends State<AmbientMode> with AmbientCallback {
   var _ambientMode = WearMode.active;
-  var _ambientDetails = AmbientDetails(false, false);
+  final _ambientDetails = const AmbientDetails(false, false);
 
   @override
   void initState() {
@@ -71,7 +76,8 @@ class _AmbientModeState extends State<AmbientMode> with AmbientCallback {
 
   void _updateMode(bool isAmbient) {
     if (mounted) {
-      setState(() => _ambientMode = isAmbient ? WearMode.ambient : WearMode.active);
+      setState(
+          () => _ambientMode = isAmbient ? WearMode.ambient : WearMode.active);
     }
   }
 
