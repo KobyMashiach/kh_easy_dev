@@ -372,6 +372,8 @@ List<DrawerButtonModel> _getBottomList(
           text: translateText(ContactusGetTranslate.shareApp, languageCode),
           icon: const Icon(Icons.share),
           enableColor: true,
+          enableColorChoose: menuButtonEnableColor,
+          textIconColor: menuButtonColor,
           onTap: () {
             if (!kIsWeb) {
               Share.share(
@@ -387,6 +389,8 @@ List<DrawerButtonModel> _getBottomList(
           text: translateText(ContactusGetTranslate.rateApp, languageCode),
           icon: const Icon(Icons.rate_review),
           enableColor: true,
+          enableColorChoose: menuButtonEnableColor,
+          textIconColor: menuButtonColor,
           onTap: () async {
             if (await inAppReview.isAvailable()) {
               inAppReview.requestReview();
