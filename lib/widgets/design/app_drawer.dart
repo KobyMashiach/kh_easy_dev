@@ -135,7 +135,7 @@ Widget _inColorMenu(
           Column(
             children: [
               const SizedBox(height: 60),
-              _title(context, screenWidth, name, profileImage),
+              _title(context, screenWidth, name, profileImage, menuButtonColor),
               ListView.separated(
                 shrinkWrap: true,
                 itemCount: buttonsList.length,
@@ -293,7 +293,7 @@ Widget _buttons(
 }
 
 Widget _title(BuildContext context, double screenWidth, String name,
-    String? profileImage) {
+    String? profileImage, Color? menuButtonColor) {
   return Column(
     children: [
       Row(
@@ -316,8 +316,10 @@ Widget _title(BuildContext context, double screenWidth, String name,
           const SizedBox(width: 24),
           Text(
             name,
-            style: const TextStyle(
-                color: Colors.white, fontSize: 24, fontWeight: FontWeight.bold),
+            style: TextStyle(
+                color: menuButtonColor ?? Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold),
           ),
         ],
       ),
