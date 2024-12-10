@@ -163,6 +163,7 @@ List<Widget> _buildDrawerButtons(BuildContext context, double screenWidth,
           icon: button.icon.icon!,
           text: button.text,
           enableColor: button.enableColor,
+          textIconColor: button.textIconColor,
           isRtl: isRtl,
           onTap: button.onTap ??
               () => KheasydevNavigatePage()
@@ -206,6 +207,7 @@ List<Widget> _buildBottomButtons(
       icon: button.icon.icon!,
       text: button.text,
       enableColor: button.enableColor,
+      textIconColor: button.textIconColor,
       isRtl: isRtl,
       onTap: () =>
           button.onTap ??
@@ -238,8 +240,10 @@ Widget _buttons(
     required bool isRtl,
     required enableColor,
     bool bottomButtons = false,
+    Color? textIconColor,
     VoidCallback? onTap}) {
-  final iconTextColor = enableColor ? Colors.white : Colors.grey[300];
+  final iconTextColor =
+      enableColor ? textIconColor ?? Colors.white : Colors.grey[300];
   return Padding(
     padding: EdgeInsets.only(
       right: isRtl ? screenWidth * 0.05 : 0,
