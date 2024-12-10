@@ -17,6 +17,8 @@ Widget kheasydevAppDrawerV2({
   double? buttonsTextSize,
   BuildContext? context,
   String? languageCode,
+  Color? menuButtonColor,
+  Color? menuButtonEnableColor,
 }) {
   final bool isRtl = Directionality.of(context!) == TextDirection.rtl;
   final double screenWidth = MediaQuery.of(context).size.width * 0.8;
@@ -53,23 +55,26 @@ Widget kheasydevAppDrawerV2({
               child: Container()),
           _closeButton(context, isRtl),
           _inColorMenu(
-              context,
-              screenWidth,
-              screenHeight,
-              buttonsTextSize,
-              name,
-              profileImage,
-              isRtl,
-              buttons,
-              contactUsScreen,
-              appBar,
-              contactsScreenButtomBackground,
-              contactsScreenDialogColor,
-              playStore,
-              appStore,
-              shareButton,
-              reviewButton,
-              tempLanguageCode),
+            context,
+            screenWidth,
+            screenHeight,
+            buttonsTextSize,
+            name,
+            profileImage,
+            isRtl,
+            buttons,
+            contactUsScreen,
+            appBar,
+            contactsScreenButtomBackground,
+            contactsScreenDialogColor,
+            playStore,
+            appStore,
+            shareButton,
+            reviewButton,
+            tempLanguageCode,
+            menuButtonColor,
+            menuButtonEnableColor,
+          ),
           if (appDetails != null)
             _outColorInfo(context, isRtl, screenHeight, appDetails),
         ],
@@ -96,23 +101,28 @@ Widget _inColorMenu(
   bool? shareButton,
   bool? reviewButton,
   ContactusTransalte? languageCode,
+  Color? menuButtonColor,
+  Color? menuButtonEnableColor,
 ) {
   final buttonsList = _buildDrawerButtons(
       context, screenWidth, buttonsTextSize, isRtl, buttons);
   final bottomButtonsList = _buildBottomButtons(
-      context,
-      screenWidth,
-      isRtl,
-      contactUsScreen,
-      appBar,
-      contactsScreenButtomBackground,
-      contactsScreenDialogColor,
-      buttonsTextSize,
-      playStore,
-      appStore,
-      shareButton,
-      reviewButton,
-      languageCode);
+    context,
+    screenWidth,
+    isRtl,
+    contactUsScreen,
+    appBar,
+    contactsScreenButtomBackground,
+    contactsScreenDialogColor,
+    buttonsTextSize,
+    playStore,
+    appStore,
+    shareButton,
+    reviewButton,
+    languageCode,
+    menuButtonColor,
+    menuButtonEnableColor,
+  );
 
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 12.0),
@@ -163,6 +173,7 @@ List<Widget> _buildDrawerButtons(BuildContext context, double screenWidth,
           icon: button.icon.icon!,
           text: button.text,
           enableColor: button.enableColor,
+          enableColorChoose: button.enableColorChoose,
           textIconColor: button.textIconColor,
           isRtl: isRtl,
           onTap: button.onTap ??
@@ -187,6 +198,8 @@ List<Widget> _buildBottomButtons(
   bool? shareButton,
   bool? reviewButton,
   ContactusTransalte? languageCode,
+  Color? menuButtonColor,
+  Color? menuButtonEnableColor,
 ) {
   final List<DrawerButtonModel> bottomList = _getBottomList(
     contactUsScreen,
@@ -197,6 +210,8 @@ List<Widget> _buildBottomButtons(
     appStore,
     shareButton,
     reviewButton,
+    menuButtonColor,
+    menuButtonEnableColor,
     languageCode,
   );
   return bottomList.map((button) {
@@ -207,6 +222,7 @@ List<Widget> _buildBottomButtons(
       icon: button.icon.icon!,
       text: button.text,
       enableColor: button.enableColor,
+      enableColorChoose: button.enableColorChoose,
       textIconColor: button.textIconColor,
       isRtl: isRtl,
       onTap: () =>
@@ -241,9 +257,11 @@ Widget _buttons(
     required enableColor,
     bool bottomButtons = false,
     Color? textIconColor,
+    Color? enableColorChoose,
     VoidCallback? onTap}) {
-  final iconTextColor =
-      enableColor ? textIconColor ?? Colors.white : Colors.grey[300];
+  final iconTextColor = enableColor
+      ? textIconColor ?? Colors.white
+      : enableColorChoose ?? Colors.grey[300];
   return Padding(
     padding: EdgeInsets.only(
       right: isRtl ? screenWidth * 0.05 : 0,
@@ -331,12 +349,16 @@ List<DrawerButtonModel> _getBottomList(
         String? appStore,
         bool? shareButton,
         bool? reviewButton,
+        Color? menuButtonColor,
+        Color? menuButtonEnableColor,
         ContactusTransalte? languageCode) =>
     [
       DrawerButtonModel(
         text: translateText(ContactusGetTranslate.contactUs, languageCode),
         icon: const Icon(Icons.contact_page),
         enableColor: true,
+        enableColorChoose: menuButtonEnableColor,
+        textIconColor: menuButtonColor,
         page: contactUsScreen ??
             ContactUsScreen(
               appBar: appBar,
