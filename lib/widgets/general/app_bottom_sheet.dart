@@ -1,12 +1,12 @@
 part of kh_easy_dev;
 
-class AppBottomSheet extends StatelessWidget {
+class KhEasydevBottomSheet extends StatelessWidget {
   final String? collapseText;
   final String? expandedText;
   final TextStyle? expandedTextStyle;
   final TextStyle? buttonsTextStyle;
   final List<BottomSheetItemsModel> items;
-  const AppBottomSheet({
+  const KhEasydevBottomSheet({
     super.key,
     this.expandedText,
     this.collapseText,
