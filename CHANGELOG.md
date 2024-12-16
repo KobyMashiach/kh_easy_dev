@@ -1,3 +1,6 @@
+## 0.3.4
+* change bottom sheet name
+
 ## 0.3.3
 * add bottom sheet
 * fix a lot bugs
