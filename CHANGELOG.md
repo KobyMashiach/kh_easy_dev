@@ -1,3 +1,9 @@
+## 0.3.3
+* add bottom sheet
+* fix a lot bugs
+* design app bar
+* add functions to app drawer
+
 ## 0.3.2
 * dialog v2 - add on ok button tap function
 * fix vertical divider
