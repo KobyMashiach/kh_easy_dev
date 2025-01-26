@@ -30,7 +30,7 @@ Widget kheasydevAppButton({
             : Border.all(color: primaryColor ?? Colors.black),
       ),
       child: Row(
-        mainAxisSize: MainAxisSize.min,
+        mainAxisSize: MainAxisSize.max,
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
