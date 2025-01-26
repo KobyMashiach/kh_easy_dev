@@ -1,3 +1,6 @@
+## 0.3.5
+* add icons to app button
+
 ## 0.3.4
 * change bottom sheet name
 
