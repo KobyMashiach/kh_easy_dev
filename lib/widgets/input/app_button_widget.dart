@@ -10,6 +10,8 @@ Widget kheasydevAppButton({
   double? textSize,
   Color? primaryColor,
   Color? textColor,
+  Widget? rightIcon,
+  Widget? leftIcon,
 }) {
   return GestureDetector(
     onTap: onTap,
@@ -27,19 +29,31 @@ Widget kheasydevAppButton({
             ? null
             : Border.all(color: primaryColor ?? Colors.black),
       ),
-      child: Center(
-        child: Text(
-          text,
-          style: TextStyle(
-            color: !disableColors
-                ? !unfillColors
-                    ? Colors.white
-                    : primaryColor ?? Colors.black
-                : Colors.black,
-            fontWeight: FontWeight.bold,
-            fontSize: textSize ?? 20,
+      child: Row(
+        mainAxisSize: MainAxisSize.max,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          if (leftIcon != null) leftIcon else const SizedBox(width: 24),
+          Expanded(
+            child: Center(
+              child: Text(
+                text,
+                style: TextStyle(
+                  color: !disableColors
+                      ? !unfillColors
+                          ? Colors.white
+                          : primaryColor ?? Colors.black
+                      : Colors.black,
+                  fontWeight: FontWeight.bold,
+                  fontSize: textSize ?? 20,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
           ),
-        ),
+          if (rightIcon != null) rightIcon else const SizedBox(width: 24),
+        ],
       ),
     ),
   );
