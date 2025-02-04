@@ -21,6 +21,7 @@ class KhEasydevDialogV2 extends StatelessWidget {
   final double? height;
   final double? width;
   final VoidCallback? okButtonOnTap;
+  final VoidCallback? cancelButtonOnTap;
 
   const KhEasydevDialogV2(
       {super.key,
@@ -42,7 +43,8 @@ class KhEasydevDialogV2 extends StatelessWidget {
       this.child,
       this.height,
       this.width,
-      this.okButtonOnTap});
+      this.okButtonOnTap,
+      this.cancelButtonOnTap});
 
   @override
   Widget build(BuildContext context) {
@@ -119,7 +121,8 @@ class KhEasydevDialogV2 extends StatelessWidget {
                                 primaryColor: primaryColor,
                                 unfillColors: true,
                                 textColor: buttonsTextColor,
-                                onTap: () => Navigator.of(context).pop(false),
+                                onTap: cancelButtonOnTap ??
+                                    () => Navigator.of(context).pop(false),
                               ),
                             ),
                         ]

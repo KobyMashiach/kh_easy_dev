@@ -1,3 +1,8 @@
+## 0.3.6
+* Update dialog V2
+* Update side menu
+* fix bugs
+
 ## 0.3.5
 * add icons to app button
 
