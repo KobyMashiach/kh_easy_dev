@@ -1,3 +1,6 @@
+## 0.3.7
+* Fix appbar shadow
+
 ## 0.3.6
 * Update dialog V2
 * Update side menu
