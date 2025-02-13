@@ -57,8 +57,8 @@ AppBar kheasydevAppBar({
     actions: actions ?? [],
     centerTitle: true,
     toolbarHeight: 70,
-    elevation: 4,
-    shadowColor: shadowColor ?? Colors.black.withValues(alpha: 0.2),
+    elevation: 0,
+    shadowColor: shadowColor ?? Colors.transparent,
     shape: const RoundedRectangleBorder(
       borderRadius: BorderRadius.only(
         bottomLeft: Radius.circular(20),
